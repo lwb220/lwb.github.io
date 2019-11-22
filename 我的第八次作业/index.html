@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>我的第八次作业</title>
+		<script>
+			function border(){
+				document.getElementById('table1').border="1";
+			}
+			function changeborder(){
+				document.getElementById('table1').border="10";
+			}
+			function tj(){
+					var x=document.getElementById('table1').insertRow(0);
+					y=x.insertCell(0);
+					z=x.insertCell(0);
+					var a=1;
+					y.innerHTML="aaaa";
+					z.innerHTML="aaaa";
+					a++;
+			}
+		</script>
+	</head>
+	<body>
+		<table id="table1" border="1">
+			<tr id="1">
+			<td>0000</td>
+			<td>0000</td>
+			</tr>
+		</table>
+		<input type="button" onclick="tj()" value="添加行">
+		<input type="button" onclick="changeborder()" value="改变border">
+		<input type="button" onclick="border()" value="还原border">
+	</body>
+</html>
