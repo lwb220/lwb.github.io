@@ -18,31 +18,30 @@
 				<th>编号</th>
 				<th>姓名</th>
 				<th>班级</th>
-				<th>操作</th>
+				<th><input type="button" value="删除" onclick="sc1(this)" /></th>
 			</tr>
 			<tr>
 				<td>1</td>
 				<td>张三</td>
 				<td>网络工程</td>
-				<td><input type="button" value="删除" onclick="sc(this)" /></td>
+				<td><input type="button" value="删除" onclick="sc1(this)" /></td>
 			</tr>
 			<tr>
 				<td>2</td>
 				<td>李四</td>
 				<td>网络工程</td>
-				<td><input type="button" value="删除" onclick="sc(this)" /></td>
+				<td><input type="button" value="删除" onclick="sc1(this)" /></td>
 			</tr>
 			<tr>
 				<td>3</td>
 				<td>王五</td>
 				<td>网络工程</td>
-				<td><input type="button" value="删除" onclick="sc(this)" /></td>
+				<td><input type="button" value="删除" onclick="sc1(this)" /></td>
 			</tr>
 		</table>
 	</body>
 	<script type="text/javascript">
 		document.getElementById("add").onclick = function() {
-
 			var id = document.getElementById("xh").value;
 			var name = document.getElementById("xm").value;
 			var gender = document.getElementById("bj").value;
@@ -51,10 +50,10 @@
 				"<td>" + id + "</td>\n"+
 				"<td>" + name + "</td>"+
 				"<td>" + gender + "</td>"+
-				"<td><input type='button' value='删除' onclick='delTr(this)' style='color:black'/></td>" +
+				"<td><input type='button' value='删除' onclick='sc1(this)' style='color:black'/></td>" +
 				"</tr>"
 		}
-		function sc(obj) {
+		function sc1(obj) {
 			var table = obj.parentNode.parentNode.parentNode;
 			var tr = obj.parentNode.parentNode;
 			table.removeChild(tr);
