@@ -1,35 +1,65 @@
+
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
-		<title>我的第八次作业</title>
-		<script>
-			function border(){
-				document.getElementById('table1').border="1";
-			}
-			function changeborder(){
-				document.getElementById('table1').border="10";
-			}
-			function tj(){
-					var x=document.getElementById('table1').insertRow(0);
-					y=x.insertCell(0);
-					z=x.insertCell(0);
-					var a=1;
-					y.innerHTML="aaaa";
-					z.innerHTML="aaaa";
-					a++;
-			}
-		</script>
+		<title></title>
 	</head>
+
 	<body>
-		<table id="table1" border="1">
-			<tr id="1">
-			<td>0000</td>
-			<td>0000</td>
+		学号：<input type="text" id="xh" placeholder="请输入编号" />
+		姓名：<input type="text" id="xm" placeholder="请输入姓名" />
+		班级：<input type="text" id="bj" placeholder="请输入班级" />
+		<input type="button" value="添加" id="add" />
+		<table border="1px" id="t1">
+			<caption style="font: '微软雅黑';font-size:20px;">学生信息表</caption>
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>班级</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>张三</td>
+				<td>网络工程</td>
+				<td><input type="button" value="删除" onclick="sc(this)" /></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>李四</td>
+				<td>网络工程</td>
+				<td><input type="button" value="删除" onclick="sc(this)" /></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>王五</td>
+				<td>网络工程</td>
+				<td><input type="button" value="删除" onclick="sc(this)" /></td>
 			</tr>
 		</table>
-		<input type="button" onclick="tj()" value="添加行">
-		<input type="button" onclick="changeborder()" value="改变border">
-		<input type="button" onclick="border()" value="还原border">
 	</body>
+	<script type="text/javascript">
+		document.getElementById("add").onclick = function() {
+
+			var id = document.getElementById("xh").value;
+			var name = document.getElementById("xm").value;
+			var gender = document.getElementById("bj").value;
+			var tab = document.getElementsByTagName("table")[0];
+			tab.innerHTML += "<tr>\n"+
+				"<td>" + id + "</td>\n"+
+				"<td>" + name + "</td>"+
+				"<td>" + gender + "</td>"+
+				"<td><input type='button' value='删除' onclick='delTr(this)' style='color:black'/></td>" +
+				"</tr>"
+		}
+		function sc(obj) {
+			var table = obj.parentNode.parentNode.parentNode;
+			var tr = obj.parentNode.parentNode;
+			table.removeChild(tr);
+		}
+	</script>
+	</body>
+
 </html>
